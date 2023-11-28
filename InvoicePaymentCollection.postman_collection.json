@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "e907f068-e829-4762-989a-0394a080ffac",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24220070",
+		"_collection_link": "https://gold-resonance-96951.postman.co/workspace/Team-Workspace~90a3539d-f64d-44ef-8457-4662019eb897/collection/24220070-e907f068-e829-4762-989a-0394a080ffac?action=share&source=collection_link&creator=24220070"
+	},
+	"item": [
+		{
+			"name": "Get All Invoices",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzAxMTUzODYxLCJleHAiOjE3MDExOTcwNjF9.YtTVeVpG_8vqUncDm60WsvYTHn6LspZgF5Cd4vkyBG8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/api/invoices/list?page=1&limit=2",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"invoices",
+						"list"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pay Invoice",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzAxMTUzODYxLCJleHAiOjE3MDExOTcwNjF9.YtTVeVpG_8vqUncDm60WsvYTHn6LspZgF5Cd4vkyBG8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"payerEmail\": \"harsh@harsh.com\",\r\n    \"receiverEmail\": \"harsh@test.com\",\r\n    \"amount\": 100,\r\n    \"dueDate\": \"2023-01-01\",\r\n    \"paymentMode\": \"offline\",\r\n    \"paymentGateway\": \"credit card\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/api/invoices/pay/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"invoices",
+						"pay",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Invoice",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzAxMTU0OTMzLCJleHAiOjE3MDExOTgxMzN9.rRxj3KOI3sC-_hlMqKycX6F0m6RyO_DMpArP4PlgGAc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"payerEmail\": \"harsh@harsh.com\",\r\n    \"receiverEmail\": \"harsh@test.com\",\r\n    \"amount\": 100,\r\n    \"dueDate\": \"2023-01-01\",\r\n    \"paymentMode\": \"offline\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/api/invoices/create",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"invoices",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"harsh@test.com\",\r\n    \"password\": \"Test@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"harsh\",\r\n    \"email\": \"harsh@test.com\",\r\n    \"password\": \"Test@123\",\r\n    \"roleType\": \"receiver\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/api/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
